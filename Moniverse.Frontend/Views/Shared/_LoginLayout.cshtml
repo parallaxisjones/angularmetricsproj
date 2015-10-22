@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="anon">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" Content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" Content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/images/favicon.ico">
+    <title>Login to Moniverse</title>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none !important;
+        }
+    </style>
+    <script>
+        // Must be first. IE10 mobile viewport fix
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+    <link href="/content/ie10mobile.css" rel="stylesheet" />
+    <link href="/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/content/toastr.css" rel="stylesheet" />
+    <link href="/content/customtheme.css" rel="stylesheet">
+
+    <link href="/scripts/dashboard-framework/dist/malhar-angular-dashboard.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.core.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.resizable.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.selectable.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.accordion.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.autocomplete.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.button.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.dialog.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.slider.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.tabs.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.datepicker.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.progressbar.css" rel="stylesheet">
+    <link href="/Content/themes/base/jquery.ui.theme.css" rel="stylesheet">
+    <link href="/Content/jquery.dataTables.css" rel="stylesheet">
+    <link href="/Content/site.css" rel="stylesheet">
+</head>
+<body>
+
+    @RenderBody()
+
+
+    <!-- Vendor /scripts -->
+    <script src="/scripts/jquery-2.1.1.js"></script>
+    <script src="/scripts/jquery-ui.js"></script>
+    <script src="/scripts/angular.js"></script>
+    <script src="/scripts/angular-animate.js"></script>
+    <script src="/scripts/angular-route.js"></script>
+    <script src="/scripts/angular-sanitize.js"></script>
+    <script src="/scripts/angular-ui-sortable.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+    <script src="/scripts/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="/scripts/spin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-cookies.js"></script>
+    <script src="/scripts/dashboard-framework/dist/malhar-angular-dashboard.js"></script>
+    <!-- Bootstrapping -->
+    <script src="/app_anon/app.js"></script>
+    <script src="/app_anon/directives.js"></script>
+    <!-- app -->
+    <script src="/app_anon/layout/useranonshell.js"></script>
+    
+
+    <!-- UI modules -->
+    <!--<script src="app/common/widget/timeseries/timeseries.js"></script>-->
+
+
+
+</body>
+</html>

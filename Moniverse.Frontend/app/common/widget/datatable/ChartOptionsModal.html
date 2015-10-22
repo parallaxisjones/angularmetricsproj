@@ -1,0 +1,143 @@
+﻿<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="widgetOptions.cancel()">&times;</button>
+  <h3>Widget Settings for <small>{{widgetOptions.widget.title}}</small></h3>
+</div>
+<div class="modal-body">
+  <form name="form" novalidate class="form-horizontal">
+    <div class="form-group row">
+      <label for="widgetTitle" class="col-sm-2 control-label">Title</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="widgetTitle" 
+        ng-model="widgetOptions.widget.title">
+      </div>
+    </div>
+
+    <div class="form-group row">
+            <div class="col-sm-10">
+                <label for="module" class="col-sm-2 control-label">Module:</label>
+                <select 
+                name="module"
+                class="form-control"
+                data-ng-options="module.name for module in widgetOptions.widget.dataModelOptions.moduleArray" 
+                data-ng-model="widgetOptions.widget.dataModelOptions.module"
+                data-ng-change="widgetOptions.setMetricState(widgetOptions.widget.dataModelOptions.module)">
+                </select>           
+            </div>
+    </div>
+    <div class="form-group row">
+            <label for="metric" class="col-sm-2 control-label">Metric:</label>
+            <div class="col-sm-10">
+                <select 
+                class="form-control"
+                data-ng-options="metric for metric in widgetOptions.widget.dataModelOptions.metricArray" 
+                data-ng-model="widgetOptions.widget.dataModelOptions.metricName">  
+                </select>     
+            </div>
+
+    </div>
+    <div class="form-group row">
+            <label for="chartType" class="col-sm-2 control-label">Chart Type:</label>
+            <div class="col-sm-10">
+                <select 
+                name="chartType"
+                class="form-control"
+                data-ng-options="chartType.friendly for chartType in widgetOptions.widget.dataModelOptions.chartTypeArray" 
+                data-ng-model="widgetOptions.widget.dataModelOptions.ajaxParams.chartType"></select>
+            </div>
+
+    </div>
+    <div class="form-group row">
+            <label for="region" class="col-sm-2 control-label">Hosting Region:</label>
+            <div class="col-sm-10">
+                <select 
+                name="region"
+                class="form-control"
+                data-ng-options="region.friendly for region in widgetOptions.widget.dataModelOptions.regionArray" 
+                data-ng-model="widgetOptions.widget.dataModelOptions.ajaxParams.region"></select>           
+            </div>
+
+    </div>
+    <div class="form-group row">
+            <label for="interval" class="col-sm-2 control-label">interval:</label>
+            <div class="col-sm-10">
+                <select 
+                name="interval"
+                class="form-control"
+                data-ng-options="interval.friendly for interval in widgetOptions.widget.dataModelOptions.intervalArray" 
+                data-ng-model="widgetOptions.widget.dataModelOptions.ajaxParams.interval"></select>     
+            </div>
+
+    </div>
+
+    <div class="form-group datetime-picker">
+        <label for="start" class="col-sm-2 control-label">Start:</label>
+        <div class="col-sm-5">
+            <!-- <button type="button" class="btn btn-default start-date" ng-click="widgetOptions.open($event)"><i class="glyphicon glyphicon-calendar"></i></button> -->
+            <input 
+            name="start"
+            type="text" 
+            class="form-control" 
+            datepicker-popup="{{widget.dataModelOptions.datepickerOptions.format}}" 
+            ng-model="widgetOptions.widget.dataModelOptions.ajaxParams.start" 
+            is-open="widgetOptions.widget.dataModelOptions.datepickerOptions.startOpened" 
+            min-date="widgetOptions.widget.dataModelOptions.datepickerOptions.minDate" 
+            max-date="widgetOptions.widget.dataModelOptions.datepickerOptions.maxDate" 
+            datepicker-options="widgetOptions.widget.dataModelOptions.datepickerOptions.dateOptions" 
+            date-disabled="widgetOptions.disabled(date, mode)" 
+            ng-required="true" 
+            close-text="Close" />
+        </div>
+        <div class="col-sm-5" style="margin-top: -31px; margin-left: -8%;">
+            <input 
+            timepicker 
+            class="timepicker-option"
+            ng-model="widgetOptions.widget.dataModelOptions.ajaxParams.start" 
+            show-meridian="widgetOptions.widget.dataModelOptions.timepickerOptions.isMeridian" /> 
+        </div>            
+    </div>
+    <div class="form-group datetime-picker">
+        <label for="end" class="col-sm-2 control-label">End:</label>
+        <div class="col-sm-5">
+            <!-- <button type="button" class="btn btn-default end-date" ng-click="widgetOptions.open($event)"><i class="glyphicon glyphicon-calendar"></i></button> -->
+            <input 
+            name="end"
+            type="text" 
+            class="form-control" 
+            datepicker-popup="{{widget.dataModelOptions.datepickerOptions.format}}" 
+            ng-model="widgetOptions.widget.dataModelOptions.ajaxParams.end" 
+            is-open="widgetOptions.endOpened" 
+            min-date="widgetOptions.minDate" 
+            max-date="widgetOptions.widget.dataModelOptions.datepickerOptions.maxDate" 
+            datepicker-options="widgetOptions.widget.dataModelOptions.datepickerOptions.dateOptions" 
+            date-disabled="widgetOptions.disabled(date, mode)" 
+            ng-required="true" 
+            close-text="Close" />
+        </div>
+        <div class="col-sm-5" style="margin-top: -31px; margin-left: -8%;">
+            <input 
+            class="timepicker-option"
+            timepicker 
+            ng-model="widgetOptions.widget.dataModelOptions.ajaxParams.end" 
+            show-meridian="widgetOptions.widget.dataModelOptions.timepickerOptions.isMeridian" /> 
+        </div>            
+    </div>
+    <div class="form-group row">
+        <label for="refresh" class="col-sm-2 control-label">Refresh:</label>
+        <div class="col-sm-1">
+            <input type="checkbox" ng-model="widgetOptions.widget.dataModelOptions.refresh">
+        </div>
+        <div class="col-sm-9">
+            <select 
+            class="form-control"            
+            data-ng-options="interval.friendly for interval in widgetOptions.widget.dataModelOptions.intervalArray" 
+            data-ng-model="widgetOptions.widget.dataModelOptions.refreshRate"></select>
+        </div>
+    </div>
+    <div ng-if="widgetOptions.partialSettingTemplateUrl" ng-include="widgetOptions.partialSettingTemplateUrl"></div>
+  </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="widgetOptions.cancel()">Cancel</button>
+    <button type="button" class="btn btn-primary" ng-click="widgetOptions.ok($event)">OK</button>
+    <button class="btn" ng-click="widgetOptions.downloadCSV()">Downlad CSV</button>
+</div>

@@ -1,0 +1,12 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <ul class="today-datas" >
+            <li ng-repeat="notification in Notifications"
+                ng-class="{'bred' :  notification.Level == 0, 'borange' :  notification.Level > 0}"
+                notification='notification'>
+
+            </li>
+        </ul>
+        
+    </div>
+</div>

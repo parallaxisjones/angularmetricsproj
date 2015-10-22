@@ -1,0 +1,38 @@
+﻿<style type="text/css">
+	.add-dash{
+	    z-index: 99999 !important;
+	    position: absolute;
+	    top: 100px;
+	    right: 50px;
+	    opacity: 1;
+	    pointer-events: auto;
+	    -webkit-backface-visibility: hidden;
+	    -moz-backface-visibility: hidden;
+	    -ms-backface-visibility: hidden;
+	    -o-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	    -webkit-transition: opacity 0.3s linear;
+	    -moz-transition: opacity 0.3s linear;
+	    -o-transition: opacity 0.3s linear;
+	    transition: opacity 0.3s linear;		
+	    font-size: 25px;
+	    color: #bd272e;
+	}
+	.hideme{
+		opacity: 0 !important;
+	}
+	.section-splash span{
+	    text-align: center;
+	    position: relative;
+	    top: 50%;
+/*	    -ms-transform: translateY(-50%);
+	    -webkit-transform: translateY(-50%);
+	    transform: translateY(-50%);*/
+	}	
+</style>
+<div class='chart-wrapper'>
+    <div class='chart-stage'>
+    	<a data-cc-add-dash></a>
+        <highchart class="playchart-conf" style='position: relative; top: 43px;' config='ts.ChartConfig'></highchart>
+    </div>
+</div>

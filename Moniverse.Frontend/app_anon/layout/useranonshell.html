@@ -1,0 +1,57 @@
+﻿<style>
+    .jumbotron {
+        text-align: center;
+    }
+
+    .monitor{
+        position: relative;
+        margin: 0 auto;
+        background: url('http://img.antiquesreporter.com.au/100527WEAU/427.jpg') no-repeat;
+        background-size: contain;
+        width: 30%;
+        height: 400px;
+    }
+
+    .nope{
+        position: relative;
+        margin: 0 auto;
+        background: url('https://i.imgur.com/kgfV66rh.jpg') no-repeat;
+        background-size: contain;
+        width: 30%;
+        height: 400px;
+    }
+
+    .loading{
+        position: relative;
+        margin: 0 auto;
+        background: url('http://img.antiquesreporter.com.au/100527WEAU/427.jpg') no-repeat;
+        background-size: contain;
+        width: 30%;
+        height: 400px;
+        -webkit-animation:spin 4s linear infinite;
+        -moz-animation: spin 4s linear infinite;
+        animation : spin 4s linear infinite;
+    }
+
+</style>
+
+<div data-ng-controller="useranonshell as vm">
+    <header class="clearfix">
+        <div data-ng-include="'/app/layout/topnav.html'"></div>
+    </header>
+    <section id="content" class="content">
+        <div data-ng-show="vm.isBusy" class="page-splash dissolve-animation">
+            <div data-cc-spinner="vm.spinnerOptions"></div>
+            <div class="page-splash-message page-splash-message-subtle">{{vm.busyMessage}}</div>
+        </div>
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Moniverse</h1>
+                <p class="lead">Welcome to the Playverse real-time reporting hub. <a href="#/test">Register</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div id="cover-image" class="monitor"><div data-cc-spinner="vm.spinnerOptions" ng-show="vm.isBusy"></div></div>
+        </div>
+    </section>
+</div>

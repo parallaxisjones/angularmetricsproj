@@ -1,0 +1,21 @@
+﻿@using PlayverseMetrics;
+@using Utilities;
+@using Moniverse.Contract;
+
+@{
+    ViewBag.Title = "Moniverse";
+    string windowsServiceStatus = ViewBag.WindowsServiceStatus;
+}
+
+<div>
+    <div data-ng-include="'/app/layout/shell.html'"></div>
+    <div id="splash-page" data-ng-show="false">
+        <div class="page-splash">
+            <div class="page-splash-message">
+                Moniverse
+            </div>
+        </div>
+    </div>
+</div>
+
+<span data-cc-scroll-to-top></span>

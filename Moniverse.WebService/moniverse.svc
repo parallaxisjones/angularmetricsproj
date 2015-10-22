@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Moniverse.WebService.WriterWebService" CodeBehind="moniverse.svc.cs" %>

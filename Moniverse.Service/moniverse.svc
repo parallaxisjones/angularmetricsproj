@@ -1,0 +1,1 @@
+﻿<% @ServiceHost Language="c#" Service="Moniverse.Contract.IWriterService" CodeBehind="WriterService.cs" %>

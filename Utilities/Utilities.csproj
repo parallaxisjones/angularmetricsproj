@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41CEBF60-BD69-4C23-B764-C847D1486D4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities</RootNamespace>
+    <AssemblyName>Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>d547cf73</NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'STAGING|AnyCPU'">
+    <OutputPath>bin\STAGING\</OutputPath>
+    <DefineConstants>TRACE;STAGING</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LocalNoDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\LocalNoDebug\</OutputPath>
+    <DefineConstants>TRACE;LOCAL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'STAGING|x64'">
+    <OutputPath>bin\x64\STAGING\</OutputPath>
+    <DefineConstants>TRACE;STAGING</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LocalNoDebug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\LocalNoDebug\</OutputPath>
+    <DefineConstants>TRACE;LOCAL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK">
+      <HintPath>..\packages\AWSSDK.2.2.1.0\lib\net45\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\packages\Membase.2.14\lib\net35\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching.Web">
+      <HintPath>..\packages\Enyim.Caching.Web.1.0.0.1\lib\net40\Enyim.Caching.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Membase">
+      <HintPath>..\packages\Membase.2.14\lib\net35\Membase.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceModelEx">
+      <HintPath>..\Moniverse.Service\ServiceModelEx.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartThreadPool">
+      <HintPath>.\SmartThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AWS\QueueManager.cs" />
+    <Compile Include="DataTools\csvReader.cs" />
+    <Compile Include="DatabaseUtilities.cs" />
+    <Compile Include="DataTools\dataValidation.cs" />
+    <Compile Include="DataTools\GenericParser\FieldType.cs" />
+    <Compile Include="DataTools\GenericParser\GenericParser.cs" />
+    <Compile Include="DataTools\GenericParser\GenericParserAdapter.cs" />
+    <Compile Include="DataTools\GenericParser\Legacy Support\StringArray.cs" />
+    <Compile Include="DataTools\GenericParser\ParserState.cs" />
+    <Compile Include="DataTools\GenericParser\ParsingException.cs" />
+    <Compile Include="DataTools\RegexUtils.cs" />
+    <Compile Include="Logging\EventLogger.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\LogWriter.cs" />
+    <Compile Include="Networking\HttpProcessor.cs" />
+    <Compile Include="Networking\HttpServer.cs" />
+    <Compile Include="Logging\MasterLogger.cs" />
+    <Compile Include="Networking\MoniverseServer.cs" />
+    <Compile Include="AWS\Notifications.cs" />
+    <Compile Include="PlayverseDomain\PlayVerseAPI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Concurrency\Retry.cs" />
+    <Compile Include="Networking\WCFProxy.cs" />
+    <Compile Include="Concurrency\WorkerQueue.cs" />
+    <Compile Include="DataTools\SvnManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Playverse\PlayVerse.Client.Service\PlayVerse.Client.Service.csproj">
+      <Project>{236395b0-6260-4b8a-936f-721a8af14607}</Project>
+      <Name>PlayVerse.Client.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Playverse\PlayVerseClient\PlayVerse.Client.csproj">
+      <Project>{815f3fba-6b15-4a1c-be1b-743a5de177b8}</Project>
+      <Name>PlayVerse.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Playverse\PlayVerseCore\PlayVerse.Core.csproj">
+      <Project>{c1a1a4eb-68f1-435a-ba9e-1d328c217d07}</Project>
+      <Name>PlayVerse.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBManager\DBManager.csproj">
+      <Project>{521c2c47-7453-49a9-bde2-c48ac0337f16}</Project>
+      <Name>DBManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moniverse.Contract\Moniverse.Contract.csproj">
+      <Project>{87f79f18-3b74-4e85-a38e-a1e7d92ad733}</Project>
+      <Name>Moniverse.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\Moniverse\packages\Fody.1.26.1\build\Fody.targets" Condition="Exists('..\Moniverse\packages\Fody.1.26.1\build\Fody.targets')" />
+  <Import Project="..\packages\Fody.1.26.1\build\Fody.targets" Condition="Exists('..\packages\Fody.1.26.1\build\Fody.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

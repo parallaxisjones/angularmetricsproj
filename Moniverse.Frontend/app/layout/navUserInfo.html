@@ -1,0 +1,39 @@
+﻿<style type="text/css">
+
+</style>
+<script>
+    (function () {
+        $('.dropdown').on('mouseover', function () {
+            $('.user-admin-dropdown').css({
+                display: 'block'
+            })
+        })
+        $('.dropdown').on('mouseleave', function () {
+            $('.user-admin-dropdown').css({
+                display: 'none'
+            })
+        })
+
+        $('.user-admin').on('mouseenter', function () {
+            $('.user-admin-dropdown').css({
+                display: 'block'
+            })
+        })
+
+        $('.user-admin').on('mouseleave', function () {
+            $('.user-admin-dropdown').css({
+                display: 'none'
+            })
+        })
+    })();
+</script>
+<div class='user-infos'>
+    <a class='user-admin' href='#'><i class="fa fa-bars"></i> {{vm.user.username}}</a>
+    <ul class="dropdown user-admin-dropdown">
+        <li><a class='logout' href='#'><i class="fa fa-sign-out"></i> Logout</a></li>
+        <li><a class='ice' href='#/ice'><i class="fa fa-credit-card"></i> Cost Data</a></li>
+        <li><a class='ice' href='#/inbox'><i class="fa fa-bell"></i> Notifications</a></li>
+    </ul>
+    <a class='game-admin' href='#'><i class="fa fa-gamepad"></i> Dungeon Defenders 2</a>
+    <div class="clearfix"></div>
+</div>

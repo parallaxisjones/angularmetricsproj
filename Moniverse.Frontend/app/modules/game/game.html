@@ -1,0 +1,31 @@
+﻿
+
+<section class="mainbar" data-ng-controller="game as vm">
+    <section class="matter">
+        <div class="container">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h1>{{vm.title}}</h1>
+                </div>              
+                <div ng-repeat="chart in vm.moduleInfo.gameInfo">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="widget wpvred">
+                            <div data-cc-widget-header title="{{chart.name}}"
+                                 allow-collapse="true"></div>
+
+                            <div class="widget-content text-center text-info">
+                                <a data-cc-add-dash=""></a>
+                                <playchart                                  
+                                    source="module"
+                                    config='chart.config'>
+                                </playchart>
+                            </div>
+                            <div class="widget-foot">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>                                                                           
+        </div>
+    </section>
+
+</section>
